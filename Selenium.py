@@ -12,13 +12,16 @@ driver = webdriver.Chrome(executable_path=binary_path)
 # time.sleep(5)  # Let the user actually see something!
 # driver.quit()
 
-driver.get('http://www.google.com/')
-elments = driver.find_elements_by_tag_name('a')
-for elment in elments:
-    if 'Gmail' in elment.text:
-        elment.click()
+# driver.get('http://www.google.com/')
+# elments = driver.find_elements_by_tag_name('a')
+# for elment in elments:
+#     if 'Gmail' in elment.text:
+#         elment.click()
 
-elments = driver.find_elements_by_tag_name('a')
-for elment in elments:
-    if 'Sign in' in elment.text:
-        elment.click()
+driver.get('http://www.google.com/')
+driver.find_element_by_xpath("//a[contains(text(),'Gmail')]").click()
+urltitle = driver.title
+print(urltitle)
+driver.current_url.
+driver.find_element_by_xpath("//a[contains(text(),'Sign in')]").click()
+
